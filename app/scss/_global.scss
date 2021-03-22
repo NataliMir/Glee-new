@@ -1,0 +1,64 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  @extend %rubik-400;
+  font-size: 16px;
+  line-height: 1.875;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.title {  
+  font-size: 36px;
+  line-height: 1.2;
+  @extend %sans-700;  
+  color: $title;   
+  text-align: center;  
+}
+
+.btn {
+  display: block;
+  font-size: 15px;
+  @extend %rubik-500;
+  position: relative;
+  outline: transparent; 
+  
+  &::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 9px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center right;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
