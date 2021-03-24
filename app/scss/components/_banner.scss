@@ -1,8 +1,8 @@
 .banner {   
   &__items {
-    background-color: rgba($accent,0.2);  
+    background-color: rgba($accent, 0.2);  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;  
+    grid-template-columns: repeat(3, 1fr);  
   }  
   
   &__item {
@@ -12,23 +12,20 @@
     padding: 30px 0 42px 65px; 
     
     &:not(:last-child) {
-      border-right: 1px solid rgba($titlemain,0.102);      
+      border-right: 1px solid rgba($titlemain, 0.1);      
     }
-  }  
-
+  }
+  
   &__subtitle {
     position: relative;
     @extend %sans-700;    
     font-size: 18px;
     line-height: 2.2;      
-    color: $subtitle;      
-  }   
-  
-  &__support,
-  &__delivery,
-  &__card {    
+    color: $subtitle;
+    
     &::before {
       content: '';      
+      width: 60px;
       position: absolute;
       top: 10px;
       left: -80px;
@@ -36,77 +33,108 @@
       background-size: contain;
       background-position: center;
     }
-  }
-  
-  &__support {
-    &::before {
-      background-image: url('../images/icons/support.svg');
-      width: 60px;
-      height: 50px;
-    }
-  }  
-  
-  &__delivery {
-    &::before {
-      background-image: url('../images/icons/delivery.svg');
-      width: 60px;
-      height: 30px;
-    }
-  }  
-  
-  &__card {
-    &::before {
-      background-image: url('../images/icons/credit-card.svg');
-      width: 60px;
-      height: 45px;
-    }
+        
+    &--support {
+      &::before {
+        background-image: url('../images/icons/support.svg');
+        height: 50px;
+      }
+    }  
+    
+    &--delivery {
+      &::before {
+        background-image: url('../images/icons/delivery.svg');        
+        height: 30px;
+      }
+    }  
+    
+    &--card {
+      &::before {
+        background-image: url('../images/icons/credit-card.svg');       
+        height: 45px;
+      }
+    }  
   }
 
-  &__text {    
-    @extend %sans-400;   
-    font-size: 16px;
-    line-height: 1.875;      
+  & p {    
+    @extend %sans-400;
+    letter-spacing: 0.4px;        
     color: $graytextdark; 
     max-width: 240px;   
   }
 }
 
 .slidermain {
-  &__item {    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;      
+  &__item {     
+    background-color: $accent;
+    position: relative;    
     padding: 217px 0 280px 300px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 609px;
+      height: 634px;
+      background-image: url(../images/banner/cirkle.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 98px;
+      right: 185px;
+    }
   } 
   
   &__link {
+    display: block;
+    font-size: 18px;
+    line-height: 1.7;
+    color: $greendark;
+    margin-bottom: 36px;
     outline: transparent;
-  }
+    
+    & p {
+      max-width: 365px;
+    }
+  }  
 
   &__btn {
     max-width: 200px;
     min-height: 60px;    
-    padding: 16px 40px 15px 29px;
+    padding: 16px 19px 16px 29px;
     color: $white;
     background-color: $icon;
-
+    transition: background-color .3s ease-in;
+    
     &:hover {
       background-color: $greendark;
     }
-
+    
     &:focus {
       border: 2px solid $greendark;
     }
-
+    
     &:active {
       color: $titlemain;
       background-color: $white;
+      
+      svg {
+        fill: $titlemain;
+      }
     }
     
-    &::before {
-      background-image: url(../images/icons/arrow.svg);
-      right: 19px;
+    svg {
+      fill: $white;
     }
+  }
+
+  &__visual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-8%, -50%);
+
   }
 
   &__title {
@@ -117,15 +145,7 @@
     color: $titlemain;
     max-width: 500px;
     margin-bottom: 22px;
-  }  
-
-  &__text {
-    font-size: 18px;
-    line-height: 1.7;
-    color: $greendark;
-    max-width: 365px;
-    margin-bottom: 36px;
-  }
+  }    
 
   .slick-dots {
     display: flex;    
@@ -148,10 +168,15 @@
         border: none;
         width: 30px;
         height: 30px;
-        border-radius: 100%;
-        outline: transparent; 
+        border-radius: 100%;        
         opacity: 0.3;
+        transition: opacity .3s ease-in; 
+        
+        &:hover {
+          opacity: 0.8;
+        }
       }
+
       &.slick-active {
         button {         
           opacity: 1;

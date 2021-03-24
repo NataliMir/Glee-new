@@ -11,13 +11,17 @@
   }  
 
   &__item {
-    &:first-child {
+    &--address {
       max-width: 195px;
     }
 
-    &:last-child {
+    &--form {
       max-width: 270px;
     }
+
+    p {
+      margin-bottom: 35px;
+    }  
   }
 
   &__logo {
@@ -32,62 +36,50 @@
     color: $titlefooter;
     margin-bottom: 25px;
   }  
-
-  &__point {
+  
+  &__point:not(:last-child) {
     margin-bottom: 8px;
   }  
 
-  &__link {
-    color: inherit;
-    transition: all .3s ease-in-out;
+  &__link {   
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease-in-out;
 
-    &:hover {
-      border-bottom: 1px solid $graytext;
+    &:hover {     
+      border-color: $graytext;
     }
 
     &:focus {
-      outline: 1px solid $graytext;
+      outline-color: $graytext;
     }
 
     &:active {
       color: $icon;      
     }
-  }  
-
-  &__text {
-    margin-bottom: 35px;
-  }  
+  }    
 
   &__form {
     @extend %sans-400;
     display: flex;
-  }
-
-  &__input,
-  &__btn {
-    border: none;
-    cursor: pointer;
-  }
+  }  
   
   &__input {    
     font-size: 12px;
     background-color: rgba($accent, 0.2);   
     max-width: 170px;
     padding: 9px 16px;
-    outline: transparent;
-    transition: all .3s ease-in-out;
+    border: none;   
+    outline: 1px solid transparent;
+    transition: outline-color .3s ease-in-out;
     
     &:hover {
-      outline: 1px solid $graytext;
+      outline-color: $graytext;
     }
     
-    &:focus {
-      background-color: $icon;
-      opacity: 0.2;
-    }
-    
+    &:focus,     
     &:active {        
       background-color: $white;
+      outline-color: $graytext;      
     }
     
     &::placeholder {
@@ -101,18 +93,19 @@
     color: $white;
     max-width: 100px;
     padding: 0 16px;
-    transition: all .3s ease-in-out;
+    outline: 1px solid transparent;
+    transition: background-color .3s ease-in-out;
     
     &:hover {      
-      color: $greeninput;
+      background-color: $graytext;      
     }
     
     &:focus {
-      outline: 1px solid $greeninput;
+      outline-color: $greeninput;
     }
-
+    
     &:active {
-      background-color: $graytext;      
+      background-color: $graytextdark;
     }
   }  
 
@@ -120,10 +113,10 @@
     padding: 24px 0 39px;
     display: flex;
     justify-content: space-between;
-  }  
 
-  &__copy {
+    p {  
     font-size: 12px;
+    }
   }
   
   &__menu {
@@ -149,16 +142,22 @@
 }
 
 .address {
-  font-style: normal;    
+  font-style: normal;
+  
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
 
-  &__link {
-    display: block;
+  &__link {   
     color: inherit;
-    margin-bottom: 8px;
-    transition: all .3s ease-in-out;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease-in-out;
     
+
     &:hover {
-      border-bottom: 1px solid $graytext;
+      border-color: $graytext;
     }
 
     &:focus {
@@ -168,11 +167,11 @@
     &:active {
       color: $icon;      
     }
-  }
 
-  &__phone,
-  &__mail {
-    white-space: nowrap;
+    &--phone,
+    &--mail {
+      white-space: nowrap;
+    }
   }
 
   &__subtitle {

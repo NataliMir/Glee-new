@@ -1,9 +1,8 @@
-$(function() {
-  
-  $('.slidermain__items').slick({
+$(function() {  
+  $('.slidermain').slick({
     dots: true,
     arrows: false,
-    fade: true,
+    // fade: true,
     autoplay: true,
     autoplaySpeed: 5000,
   });
