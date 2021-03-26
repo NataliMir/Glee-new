@@ -10,6 +10,7 @@ body {
   font-size: 16px;
   line-height: 1.9;
   background-color: $white;
+  color: $titlemain;
 }
 
 .main {
@@ -20,6 +21,10 @@ body {
   max-width: 1800px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.container--section {
+  max-width: 1200px;
 }
 
 .sr-only {
@@ -39,7 +44,7 @@ body {
   font-size: 36px;
   line-height: 1.2;
   @extend %sans-700;  
-  color: $title;   
+  color: $menuhover;   
   text-align: center;  
 }
 

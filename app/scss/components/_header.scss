@@ -7,9 +7,14 @@
   }
 }
 
+.logo {
+  max-width: 146px;
+  height: auto;
+}
+
 .menu {
   display: flex;
-  padding: 0 0 7px 176px;
+  padding: 0 0 7px 346px;
 
   &__item:not(:last-child) {
     margin-right: 35px;
@@ -47,21 +52,23 @@
   &__form {
     display: flex;
     align-items: center;
-    position: relative;
+    position: relative; 
+    
+    .header__input {
+      border: 1px solid $greeninput;
+      border-radius: 5px;
+      opacity: 0;
+
+      &--active {
+        opacity: 1;        
+      }                             
+    }
   }
   
   &__link {
     display: block;     
     position: relative;
-    transition: background-color,fill .3s ease-in;    
-
-    &:focus {
-      border: 2px solid $greendark;
-    }
-
-    &:active {
-      border: 4px solid $greendark;
-    }    
+    transition: background-color .3s ease-in;   
     
     svg {
       width: 21px;
@@ -70,14 +77,15 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      fill: $titlemain;    
+      fill: $titlemain; 
+      transition: fill .3s ease-in;   
     }
 
     &--search,
     &--user {
       width: 50px;
       height: 50px;
-      border-radius: 100%;
+      border-radius: 100%;       
     }
   
     &--search {
@@ -91,8 +99,24 @@
           fill: $white;
         }
       }
-    }
 
+      &:focus {
+        background-color: rgba($icon, 0.2); 
+        border: 2px solid $greendark;
+
+        & svg {
+          fill: $greendark;
+        }
+      }
+      
+      &:active {
+        background-color: $icon; 
+        
+        & svg {
+          fill: $white;
+        }
+      } 
+    }
   
     &--heart,
     &--cart {
@@ -102,12 +126,29 @@
       position: relative;    
   
       &:hover {
-        background-color: rgba($accent, .6); 
+        background-color: rgba($accent, 0.6); 
 
         svg {
           fill: $white;
         }
       }
+
+      &:focus {
+        background-color: rgba($icon, 0.2); 
+        border: 2px solid $greendark;
+
+        & svg {
+          fill: $greendark;
+        }
+      }
+      
+      &:active {
+        background-color: $icon; 
+        
+        & svg {
+          fill: $white;
+        }
+      } 
     }  
   
     &--heart {
@@ -132,27 +173,36 @@
     &--cart {
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
-      margin-right: 20px;       
+      margin-right: 17px;       
     }
 
     &--user {
       background-color: $icon; 
+      
+      & svg {
+        fill: $white;
+      }
       
       &:hover {
         background-color: $greendark;        
       }
       
       &:focus {
+        background-color: rgba($icon, 0.2); 
         border: 2px solid $greendark;
+
+        & svg {
+          fill: $greendark;
+        }
       }
       
       &:active {
-        border: 4px solid $accent;
-      }
-      
-      & svg {
-        fill: $white;
-      }       
+        background-color: $icon; 
+        
+        & svg {
+          fill: $white;
+        }
+      }      
     }    
   }
 
@@ -165,17 +215,9 @@
     width: 16px;
     height: 16px;
     border-radius: 100%;
-    background-color: $white;
-    color: $titlemain;
+    background-color: $white;    
     font-size: 10px;
     line-height: 1.6;
     text-align: center;
   }  
-}
-
-.footer__input  {
-  display: none;
-  position: absolute;
-  left: -180%;
-  top: 5px;
 }

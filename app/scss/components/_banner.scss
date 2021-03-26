@@ -101,7 +101,7 @@
 
   &__btn {
     max-width: 200px;
-    min-height: 60px;    
+    min-height: 60px;
     padding: 16px 19px 16px 29px;
     color: $white;
     background-color: $icon;
@@ -133,6 +133,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    max-width: 640px;
+    height: auto;
     transform: translate(-8%, -50%);
 
   }
