@@ -1,0 +1,182 @@
+.footer {
+  font-size: 14px;
+  line-height: 1.7;
+  color: $graytext;
+		
+  &__top {
+    padding: 78px 0 81px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 270px;
+    border-bottom: 1px solid #dae4e9;
+  }  
+
+  &__item {
+
+    &--address {
+      max-width: 195px;
+    }
+
+    &--form {
+      max-width: 270px;
+    }
+
+    p {
+      margin-bottom: 35px;
+    }  
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 25px;
+  }
+  
+  &__title {
+    @extend %sans-700;
+    font-size: 16px;
+    line-height: 1;
+    color: $titlefooter;
+    text-transform: uppercase;
+    margin: 18px 0 21px;
+  }   
+  
+  &__point:not(:last-child) {
+    margin-bottom: 8px;
+  }  
+
+  &__link {   
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease-in-out;
+
+    &:hover {     
+      border-color: $graytext;
+    }
+
+    &:focus {
+      outline-color: $graytext;
+    }
+
+    &:active {
+      color: $icon;      
+    }
+  }    
+
+  &__form {
+    @extend %sans-400;
+    display: flex;
+  }  
+  
+  &__input {
+    font-size: 12px;
+    background-color: rgba($accent, 0.2);
+    min-width: 170px;
+    padding: 9px 16px;
+    border: none;
+    outline: 1px solid transparent;
+    transition: outline-color .3s ease-in-out;
+    
+    &:hover {
+      outline-color: $graytext;
+    }
+    
+    &:focus,
+    &:active {
+      background-color: $white;
+      outline-color: $graytext;
+    }
+    
+    &::placeholder {
+      color: $greeninput;        
+    }
+  }  
+  
+  &__btn {
+    font-size: 14px;
+    background-color: $icon;
+    color: $white;
+    max-width: 100px;
+    padding: 0 18px;
+    outline: 1px solid transparent;
+    transition: background-color .3s ease-in-out;
+    
+    &:hover {      
+      background-color: $graytext;      
+    }
+    
+    &:focus {
+      outline-color: $greeninput;
+    }
+    
+    &:active {
+      background-color: $graytextdark;
+    }
+  }  
+
+  &__bottom {
+    padding: 24px 0 39px;
+    display: flex;
+    justify-content: space-between;
+
+    p {  
+    font-size: 12px;
+    }
+  }
+  
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__par:not(:last-child) {
+    margin-right: 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -15px;
+      top: 3px;      
+      width: 2px;
+      height: 17px;
+      background-color: $graytext;
+    } 
+  }
+}
+
+.address {
+  font-style: normal;
+  
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {   
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease-in-out;
+    
+
+    &:hover {
+      border-color: $graytext;
+    }
+
+    &:focus {
+      outline: 1px solid $graytext;
+    }
+
+    &:active {
+      color: $icon;      
+    }
+
+    &--phone,
+    &--mail {
+      white-space: nowrap;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+  }
+}

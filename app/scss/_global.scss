@@ -8,7 +8,9 @@ body {
   flex-direction: column;
   @extend %rubik-400;
   font-size: 16px;
-  line-height: 1.875;
+  line-height: 1.9;
+  background-color: $white;
+  color: $titlemain;
 }
 
 .main {
@@ -19,6 +21,10 @@ body {
   max-width: 1800px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.container--section {
+  max-width: 1200px;
 }
 
 .sr-only {
@@ -38,27 +44,36 @@ body {
   font-size: 36px;
   line-height: 1.2;
   @extend %sans-700;  
-  color: $title;   
+  color: $menuhover;   
   text-align: center;  
 }
 
-.btn {
-  display: block;
-  font-size: 15px;
-  @extend %rubik-500;
-  position: relative;
-  outline: transparent; 
-  
-  &::before {
-    content: '';
-    display: block;
-    width: 22px;
-    height: 9px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center right;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+button {
+  border: none;
+  background: none;
+  outline: transparent;
+  cursor: pointer;
 }
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  @extend %rubik-500;  
+  outline: transparent; 
+
+  svg {
+    width: 22px;
+    height: 9px;    
+  } 
+}
+
+a {
+  color: inherit;
+}
+
+input {
+  cursor: pointer;
+}
+

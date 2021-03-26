@@ -1,0 +1,131 @@
+.desing {
+  padding: 30px 0;		
+
+  &__title {
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  } 
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    margin-bottom: 120px;
+  }
+  
+  &__item {
+    position: relative;
+    min-height: 246px;
+    background-color: $desing-bg;
+    padding: 36px 0 0 35px;
+    overflow: hidden;
+  } 
+
+  &__content {
+    max-width: 175px;
+  }
+
+  &__name,
+  &__category {
+    @extend %sans-700;
+    line-height: 1.2;
+    text-transform: capitalize;
+  }
+  
+
+  &__name {
+    font-size: 20px;
+    color: $menuhover;
+    margin-bottom: 8px;
+  }    
+  
+  
+  &__category {
+    color: $icon;
+  }
+  
+  &__visial {    
+    position: absolute;
+    left: 100px;
+    bottom: 43px;
+
+    &--chair {
+      left: 50%;
+      transform: translateX(10%);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    max-width: max-content;
+  }
+}
+
+.filter {
+  &__btn {    
+    padding: 0;    
+    @extend %sans-700;    
+    line-height: 1.2;
+    letter-spacing: 0.8px;
+    color: $menu;    
+    transition: color .3s ease-in;
+
+    &:hover {
+      color: $menuhover;
+    }    
+  }
+}
+
+.videodes {
+  background-color: $video-bg;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom 21%;  
+
+  &__link {
+    display: flex; 
+    justify-content: center;  
+    padding: 201px 0;
+    overflow: hidden;
+  }
+  
+  &__icon {
+    display: block;    
+    position: relative;
+    width: 98px;
+    height: 98px;
+    border-radius: 100%;
+    background-color: $icon; 
+    
+    &::before {
+      content: '';
+      display: block;
+      width: 127px;
+      height: 127px;
+      border-radius: 100%;
+      background-color: rgba($icon, 0.4); 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }    
+
+    & svg {      
+      width: 22px;
+      height: 25px;
+      fill: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: fill .3s ease-in;
+    }
+
+    &:hover {
+      svg {
+        fill: $greeninput;
+      }
+    }
+  }
+}

@@ -4,19 +4,12 @@
 @import 'reset';
 @import 'libs';
 
-@import 'header';
-@import 'banner';
-@import 'prodweek';
+@import 'components/header';
+@import 'components/banner';
+@import 'components/prodweek';
+@import 'components/desing';
+@import 'components/news';
+@import 'components/footer';
 
-
-
-
-
-
-		
-  
-
-@import 'footer';
-
-@import 'media';
+@import 'mixins';
 
