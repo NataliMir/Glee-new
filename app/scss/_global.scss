@@ -21,11 +21,17 @@ body {
   max-width: 1800px;
   margin: 0 auto;
   padding: 0 15px;
+  
+  &--section {
+    max-width: 1200px;
+  }
+
+  &--sliderpartners {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
 }
 
-.container--section {
-  max-width: 1200px;
-}
 
 .sr-only {
   position: absolute;
@@ -41,9 +47,9 @@ body {
 }
 
 .title {  
+  @extend %sans-700;    
   font-size: 36px;
   line-height: 1.2;
-  @extend %sans-700;  
   color: $menuhover;   
   text-align: center;  
 }
@@ -56,11 +62,11 @@ button {
 }
 
 .btn {
-  display: flex;
+  @extend %rubik-500; 
+  display: flex;   
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
-  @extend %rubik-500;  
   outline: transparent; 
 
   svg {
@@ -72,8 +78,3 @@ button {
 a {
   color: inherit;
 }
-
-input {
-  cursor: pointer;
-}
-
