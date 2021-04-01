@@ -1,5 +1,5 @@
 .desing {
-  padding: 30px 0;		
+  padding: 30px 0 0;		
 
   &__title {
     text-transform: capitalize;
@@ -9,8 +9,29 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 32px;
+    row-gap: 32px;
+    column-gap: 32px;
     margin-bottom: 120px;
+    
+    @include for-tablet-landscape-only {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 25px;
+      column-gap: 25px;
+      margin-bottom: 90px;      
+    }
+    
+    @include for-tablet-portrait-only {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin-bottom: 60px;        
+    }
+
+    @include for-phone-only {
+      // display: block;
+      // max-width: 520px;
+      // margin: 0 auto;
+    }
   }
   
   &__item {
@@ -19,9 +40,21 @@
     background-color: $desing-bg;
     padding: 36px 0 0 35px;
     overflow: hidden;
+    
+    @include for-desktop-only {
+      min-height: 200px;
+      padding: 25px 0 0 25px;
+    }
+
+    @include for-tablet-portrait-only {
+      max-width: 340px;
+      width: 100%;
+    }    
   } 
 
   &__content {
+    position: absolute;
+    z-index: 2;
     max-width: 175px;
   }
 
@@ -30,28 +63,37 @@
     @extend %sans-700;
     line-height: 1.2;
     text-transform: capitalize;
-  }
-  
+  }  
 
   &__name {
-    font-size: 20px;
+    @include line-clamp-2;
+    font-size: 20px;    
     color: $menuhover;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }    
   
-  
   &__category {
+    @include line-clamp-1;
     color: $icon;
   }
   
   &__visial {    
     position: absolute;
-    left: 100px;
-    bottom: 43px;
-
-    &--chair {
+    left: 46%;
+    bottom: 35px; 
+    
+    @include for-tablet-landscape-only {
       left: 50%;
-      transform: translateX(10%);
+      bottom: 25px;      
+    }
+    
+    @include for-tablet-portrait-only {
+      left: 40%;
+      bottom: 5px;       
+    }
+
+    @include for-phone-only {
+      left: 46%;
     }
   }
 
@@ -61,32 +103,24 @@
   }
 }
 
-.filter {
-  &__btn {    
-    padding: 0;    
-    @extend %sans-700;    
-    line-height: 1.2;
-    letter-spacing: 0.8px;
-    color: $menu;    
-    transition: color .3s ease-in;
-
-    &:hover {
-      color: $menuhover;
-    }    
-  }
-}
-
-.videodes {
-  background-color: $video-bg;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom 21%;  
-
+.videodes {  
   &__link {
     display: flex; 
     justify-content: center;  
+    background-color: $video-bg;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     padding: 201px 0;
     overflow: hidden;
+
+    @include for-tablet-landscape-only {
+      padding: 120px 0;
+    }
+
+    @include for-phone-only {
+      display: none;
+    }
   }
   
   &__icon {
@@ -96,6 +130,13 @@
     height: 98px;
     border-radius: 100%;
     background-color: $icon; 
+    transition: background-color .3s ease-in;
+    outline: transparent;
+
+    @include for-tablet-landscape-only {
+      width: 65px;
+      height: 65px;
+    }
     
     &::before {
       content: '';
@@ -109,9 +150,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 1;
+
+      @include for-tablet-landscape-only {
+        width: 90px;
+        height: 90px;
+      }
     }    
 
-    & svg {      
+    svg {      
       width: 22px;
       height: 25px;
       fill: $white;
@@ -119,13 +165,20 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      outline: transparent;
       transition: fill .3s ease-in;
-    }
 
-    &:hover {
-      svg {
+      &:hover {
         fill: $greeninput;
       }
+
+      &:focus {
+        fill: $white;
+      }
+    }
+
+    &:focus {
+      background-color: $white;
     }
   }
 }

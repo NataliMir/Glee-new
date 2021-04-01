@@ -11,13 +11,41 @@ $(function() {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 899,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 574,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      }
+    ],
     arrows: false,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
   });
 
   $('.usernav__link--search').on('click',function() {
-    $('.header__input').toggleClass('header__input--active');
+    $('.header__input').toggleClass('active');
+    $('body').toggleClass('lock');
+  });
+
+  $('.header__btn, .menu__link').on('click',function() {
+    $('.header__nav').toggleClass('header__nav--active');
     $('body').toggleClass('lock');
   });
 

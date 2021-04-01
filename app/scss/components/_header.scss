@@ -3,32 +3,119 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 144px;  
+    min-height: 144px;
+    
+    @include for-tablet-landscape-only {
+      min-height: 90px;      
+    }
+
+    @include for-tablet-portrait-only {
+      position: relative;
+    }
+
+    &--active .menu {
+      @include for-tablet-portrait-only {
+        transform: translateY(0%);
+        z-index: 3;         
+      }
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+
+    @include for-tablet-portrait-only {
+      display: block;
+      z-index: 4;
+      margin-left: 65px;
+    }
   }
 }
 
 .logo {
-  max-width: 146px;
-  height: auto;
+  &__img {
+    max-width: 146px;
+    height: auto;
+
+    @include for-big-desktop-only  {
+      max-width: 120px;
+    }
+
+    @include for-desktop-only {
+      max-width: 100px;
+    }
+
+    @include for-tablet-portrait-only {
+      position: relative;
+      z-index: 4;
+    }
+  }  
 }
 
 .menu {
-  display: flex;
+  display: flex;  
   padding: 0 0 7px 346px;
+  
+  @include for-big-desktop-only  {
+    padding: 0;    
+  }
+
+  @include for-tablet-portrait-only {    
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100vh;	
+    text-align: center;
+    transform: translateY(-200%);
+    transition: all 0.5s ease-in-out;
+    background-color: $accent;
+    padding: 120px 0 15px;
+    overflow: auto;    
+  }
 
   &__item:not(:last-child) {
     margin-right: 35px;
-  }  
+
+    @include for-desktop-only {
+      margin-right: 0;
+    }
+  } 
+  
+  &__item {
+    @include for-desktop-only {
+      margin: 0 16px;      
+    }
+
+    @include for-tablet-portrait-only {
+      padding-bottom: 40px;
+      margin: 0;
+    }
+  }
 
   &__link {
+    position: relative;
     font-size: 15px;
     line-height: 1;
     letter-spacing: 0.4px;
     color: $greendark;
     border-bottom: 1px solid transparent;
-    transition: 
-    color .3s ease-in,
-    border-color .3s ease-in;
+    transition: color .3s ease-in, border-color .3s ease-in;
+    
+    @include for-tablet-portrait-only {
+      display: block; 
+      font-size: 18px;
+      line-height: 1.4;
+      letter-spacing: 0.8px;
+
+    }
 
     &:hover {
       color: $menu;
@@ -36,31 +123,65 @@
     }
 
     &:focus {
-      outline-color: 1px solid $greendark;
+      outline-color: $greendark;
     }
 
     &:active {
       background-color: $icon;
       font-weight: 600;
     }
+
+    &--submenu {
+      &::before {
+        content: '+';
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+
+        @include for-tablet-portrait-only {
+          left: 55%;
+        }
+      }
+    }
   }
 }
 
 .usernav {
-  display: flex; 
+  display: flex;
+  
+  @include for-tablet-portrait-only {
+    z-index: 3;    
+  }
+
+  @include for-phone-only {
+    display: none;
+  }
   
   &__form {
     display: flex;
     align-items: center;
     position: relative; 
+
+    @include for-tablet-landscape-only {
+      display: none;
+    }
     
     .header__input {
+      position: absolute;
+      top: 5px;
+      left: 0;
       border: 1px solid $greeninput;
       border-radius: 5px;
-      opacity: 0;
-
-      &--active {
-        opacity: 1;        
+      outline: transparent;
+      display: none;
+      
+      &.active {
+        display: block;
+        
+        @include for-big-desktop-only  {
+          top: 109%;          
+          min-width: 300px;
+        }
       }                             
     }
   }
@@ -90,7 +211,11 @@
   
     &--search {
       background-color: rgba($icon, 0.2);    
-      margin: 0 20px;
+      margin: 0 20px 0 180px;
+
+      @include for-big-desktop-only  {
+        margin: 0 20px 0 0;
+      }
   
       &:hover {
         background-color: $icon; 
@@ -123,7 +248,12 @@
       width: 90px;
       height: 50px;
       background-color: $accent;
-      position: relative;    
+      position: relative;
+      
+      @include for-tablet-landscape-only {
+        width: 80px;
+        height: 40px;
+      }      
   
       &:hover {
         background-color: rgba($accent, 0.6); 
@@ -153,7 +283,12 @@
   
     &--heart {
       border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;      
+      border-bottom-left-radius: 25px; 
+      
+      @include for-tablet-landscape-only {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;        
+      }
   
       &::after {
         content: '';
@@ -166,18 +301,26 @@
         width: 1px;
         height: 32px;
         background-color: $white;
-        opacity: 0.4;
+        opacity: 0.4;         
       }
     }  
   
     &--cart {
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
-      margin-right: 17px;       
+      margin-right: 17px;
+      
+      @include for-tablet-landscape-only {
+        margin-right: 0;        
+      }
     }
 
     &--user {
-      background-color: $icon; 
+      background-color: $icon;
+
+      @include for-tablet-landscape-only {
+        display: none;
+      }
       
       & svg {
         fill: $white;
@@ -210,14 +353,20 @@
     position: absolute;
     z-index: 2;
     bottom: 22px;   
-    left: 50px;
+    left: 50px;    
     display: block;
-    width: 16px;
+    min-width: 16px;
     height: 16px;
-    border-radius: 100%;
+    border-radius: 8px;
+    padding: 0 1px;
     background-color: $white;    
     font-size: 10px;
     line-height: 1.6;
     text-align: center;
+    
+    @include for-tablet-landscape-only {
+      bottom: 20px;   
+      left: 45px;
+    }    
   }  
 }

@@ -2,15 +2,49 @@
   font-size: 14px;
   line-height: 1.7;
   color: $graytext;
+  
+  @include for-tablet-portrait-only {
+    font-size: 16px;    
+  }
 		
   &__top {
-    padding: 78px 0 81px;
+    padding: 79px 0 81px;
     display: grid;
     grid-template-columns: 300px 300px 300px 270px;
     border-bottom: 1px solid #dae4e9;
+    
+    @include for-big-desktop-only  {
+      grid-template-columns: repeat(4, 1fr); 
+      column-gap: 20px;     
+    }
+    
+    @include for-desktop-only {
+      padding: 50px 0;
+    }
+    
+    @include for-tablet-portrait-only {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;      
+    }
+    
+    @include for-phone-only {
+      padding: 40px 0;      
+    }
   }  
 
   &__item {
+    &:not(:last-child) {
+      @include for-tablet-portrait-only {
+        margin-bottom: 20px;        
+      }
+    }
+
+    &:nth-child(3) {
+      @include for-phone-only {
+        margin-bottom: 0;
+      }
+    }
 
     &--address {
       max-width: 195px;
@@ -18,10 +52,20 @@
 
     &--form {
       max-width: 270px;
+
+      @include for-desktop-only {
+        max-width: 200px;
+        width: 100%;
+      }      
     }
 
     p {
+      @include line-clamp-2;
       margin-bottom: 35px;
+
+      @include for-tablet-portrait-only {
+        margin-bottom: 20px;
+      }
     }  
   }
 
@@ -32,11 +76,16 @@
   
   &__title {
     @extend %sans-700;
+    @include line-clamp-1;
     font-size: 16px;
     line-height: 1;
     color: $titlefooter;
     text-transform: uppercase;
     margin: 18px 0 21px;
+    
+    @include for-tablet-portrait-only {
+      margin: 10px 0;      
+    }
   }   
   
   &__point:not(:last-child) {
@@ -58,72 +107,43 @@
     &:active {
       color: $icon;      
     }
-  }    
-
-  &__form {
-    @extend %sans-400;
-    display: flex;
-  }  
-  
-  &__input {
-    font-size: 12px;
-    background-color: rgba($accent, 0.2);
-    min-width: 170px;
-    padding: 9px 16px;
-    border: none;
-    outline: 1px solid transparent;
-    transition: outline-color .3s ease-in-out;
-    
-    &:hover {
-      outline-color: $graytext;
-    }
-    
-    &:focus,
-    &:active {
-      background-color: $white;
-      outline-color: $graytext;
-    }
-    
-    &::placeholder {
-      color: $greeninput;        
-    }
-  }  
-  
-  &__btn {
-    font-size: 14px;
-    background-color: $icon;
-    color: $white;
-    max-width: 100px;
-    padding: 0 18px;
-    outline: 1px solid transparent;
-    transition: background-color .3s ease-in-out;
-    
-    &:hover {      
-      background-color: $graytext;      
-    }
-    
-    &:focus {
-      outline-color: $greeninput;
-    }
-    
-    &:active {
-      background-color: $graytextdark;
-    }
-  }  
+  }   
 
   &__bottom {
     padding: 24px 0 39px;
     display: flex;
     justify-content: space-between;
+    
+    @include for-tablet-landscape-only {
+      padding: 20px 0 30px;      
+    }
+    
+    @include for-phone-only {
+      flex-direction: column-reverse;
+      padding: 20px 0 15px;      
+    }
 
     p {  
-    font-size: 12px;
+      font-size: 12px;
+
+      @include for-tablet-portrait-only {
+        font-size: 14px;
+      }
+
+      @include for-phone-only {
+        font-size: 15px;
+      }
     }
   }
   
   &__menu {
     display: flex;
     justify-content: space-between;
+
+    @include for-phone-only {
+      max-width: 280px;
+      margin-bottom: 20px;
+    }
   }
 
   &__par:not(:last-child) {
@@ -139,6 +159,10 @@
       width: 2px;
       height: 17px;
       background-color: $graytext;
+      
+      @include for-phone-only {
+        right: -25px;        
+      }
     } 
   }
 }
@@ -152,7 +176,7 @@
     }
   }
 
-  &__link {   
+  &__link {     
     color: inherit;
     border-bottom: 1px solid transparent;
     transition: border-color .3s ease-in-out;
@@ -179,4 +203,70 @@
   &__subtitle {
     text-transform: uppercase;
   }
+}
+
+.form {
+  @extend %sans-400;
+  display: flex;  
+
+  &__input {
+    font-size: 12px;
+    background-color: rgba($accent, 0.2);
+    padding: 9px 16px;
+    max-width: 170px;
+    width: 100%;
+    border: none;
+    outline: 1px solid transparent;
+    cursor: pointer;
+    transition: outline-color .3s ease-in-out;
+    
+    @include for-tablet-portrait-only {
+      font-size: 14px;
+      padding: 9px 7px;
+    }
+    
+    &:hover {
+      outline-color: $graytext;
+    }
+    
+    &:focus,
+    &:active {
+      background-color: $white;
+      outline-color: $graytext;
+    }
+    
+    &::placeholder {
+      color: $greeninput;        
+    }
+  }  
+
+  &__btn {
+    font-size: 14px;
+    background-color: $icon;
+    color: $white;   
+    padding: 0 18px;
+    outline: 1px solid transparent;
+    transition: background-color .3s ease-in-out;
+    
+    @include for-desktop-only {
+      max-width: max-content;     
+      padding: 0 10px;
+    }
+
+    @include for-tablet-portrait-only {
+      font-size: 15px;
+    }
+    
+    &:hover {      
+      background-color: $graytext;      
+    }
+    
+    &:focus {
+      outline-color: $greeninput;
+    }
+    
+    &:active {
+      background-color: $graytextdark;
+    }
+  } 
 }
