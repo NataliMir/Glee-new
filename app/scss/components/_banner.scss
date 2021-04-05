@@ -3,12 +3,15 @@
     background-color: rgba($accent, 0.2);  
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
+    
+    @include for-desktop-only {      
+      grid-template-columns: repeat(2, 1fr);      
+    }
 
-    @include for-tablet-portrait-only {
+    @include for-phone-only {
       display: block;
     }
-  }
-  
+  } 
   
   &__item {
     display: flex;
@@ -17,27 +20,41 @@
     position: relative;
     padding: 36px 0; 
     
-    @include for-tablet-landscape-only {
-      padding: 70px 0 36px; 
-      flex-direction: column;
-      justify-content: flex-start;      
+    @include for-desktop-only {      
+      padding: 70px 0 36px;      
     }
 
     @include for-tablet-portrait-only {
-      padding: 30px 15px;
+      padding: 70px 15px 30px;
     }
     
     @include for-phone-only {
-      padding: 15px;
-      
+      min-height: 150px;         
+      padding: 15px;      
     }
 
     &:not(:last-child) {
-      border-right: 1px solid rgba($titlemain, 0.1);
+      border-right: 1px solid rgba($titlemain, 0.1); 
       
-      @include for-tablet-portrait-only {
+      @include for-phone-only {
         border-right: none;
-        border-bottom: 1px solid rgba($titlemain, 0.1);
+      }
+    }
+    
+    &:nth-child(2) {
+      @include for-desktop-only {      
+        border-right: none;
+      }
+
+      @include for-phone-only {
+        border-top: 1px solid rgba($titlemain, 0.1);        
+      }
+    }
+
+    &:last-child {
+      @include for-desktop-only {
+        grid-column: span 2;
+        border-top: 1px solid rgba($titlemain, 0.1);         
       }
     }
 
@@ -51,25 +68,15 @@
       background-size: contain;
       background-position: center;
       
-      @include for-big-desktop-only  {
+      @include for-big-desktop-only {
         left: 14%;        
       }
 
-      @include for-desktop-only {
-        left: 4%;
-      }
-
-      @include for-tablet-landscape-only {        
+      @include for-desktop-only {        
         top: 5%;
         left: 50%;
         transform: translate(-50%, 35%);
-      }
-      
-      @include for-tablet-portrait-only {
-        top: 25%;
-        left: 15%;
-        transform: translate(-50%, 35%);
-      }
+      }    
 
       @include for-phone-only {
         content: none;
@@ -330,8 +337,7 @@
     @include for-tablet-landscape-only {
       font-size: 32px;      
       max-width: 250px;
-      margin-top: 20px;
-      
+      margin-top: 20px;      
     }
   }    
 

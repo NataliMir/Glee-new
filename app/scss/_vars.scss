@@ -18,6 +18,12 @@
   font-weight: 400;
 }
 
+%line-clamp {
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;  
+}
+
 $accent: #fcd7b6;
 $white: #fff;         
 $titlemain: #243f4d;
