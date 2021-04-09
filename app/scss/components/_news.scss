@@ -1,6 +1,14 @@
 .news {
   padding: 111px 0 0;
 
+  @include for-desktop-only {
+    padding: 75px 0 0;
+  }
+  
+  @include for-phone-only {
+    padding: 50px 0 0;    
+  }
+
   &__header {
     display: flex;
     flex-wrap: wrap;
