@@ -1,24 +1,47 @@
-.header {   
+.lock {
+  overflow: hidden;
+}
+
+.header {  
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     min-height: 144px;
-    
-    @include for-tablet-landscape-only {
-      min-height: 90px;      
+    z-index: 5;    
+
+    @include for-desktop-only {
+      flex-wrap: wrap;
+    } 
+
+    @include for-tablet-portrait-only {
+      min-height:  120px;
+      align-content: stretch;
     }
 
     @include for-tablet-portrait-only {
-      position: relative;
+      position: relative;     
+
+      &::before {
+        content: '';
+        display: block;
+        min-height: 120px;
+        min-width: 100%;
+        background-color: $white;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        right: -15px;
+        z-index: 4;         
+      }
     }
 
     &--active .menu {
       @include for-tablet-portrait-only {
         transform: translateY(0%);
-        z-index: 3;         
       }
-    }
+    }  
   }
 
   &__btn {
@@ -33,22 +56,22 @@
       display: block;
       z-index: 4;
       margin-left: 65px;
+      order:3;
     }
   }
 }
 
 .logo {
+  z-index: 4;
   &__img {
     max-width: 146px;
-    height: auto;
+    min-height: 39px;
+    object-fit: cover;
 
     @include for-big-desktop-only  {
       max-width: 120px;
-    }
-
-    @include for-desktop-only {
-      max-width: 100px;
-    }
+      min-height: 32px;     
+    }   
 
     @include for-tablet-portrait-only {
       position: relative;
@@ -65,26 +88,37 @@
     padding: 0;    
   }
 
+  @include for-desktop-only {
+    order:2;
+    min-width: 100%;
+    justify-content: center;    
+  }
+
   @include for-tablet-portrait-only {    
     display: block;
     position: absolute;
+    z-index: 0;
     top: 0;
-    left: 0;
-    right: 0;
+    left: -15px;
+    right: -15px;
     bottom: 0;
     min-height: 100vh;	
     text-align: center;
     transform: translateY(-200%);
     transition: all 0.5s ease-in-out;
     background-color: $accent;
-    padding: 120px 0 15px;
+    padding: 180px 0 15px;    
     overflow: auto;    
-  }
+  }  
 
   &__item:not(:last-child) {
     margin-right: 35px;
 
     @include for-desktop-only {
+      margin-right: 40px;
+    }
+
+    @include for-tablet-portrait-only {
       margin-right: 0;
     }
   } 
@@ -114,7 +148,6 @@
       font-size: 18px;
       line-height: 1.4;
       letter-spacing: 0.8px;
-
     }
 
     &:hover {
@@ -141,6 +174,10 @@
         @include for-tablet-portrait-only {
           left: 55%;
         }
+        
+        @include for-phone-only {
+          left: 60%;          
+        }
       }
     }
   }
@@ -148,27 +185,27 @@
 
 .usernav {
   display: flex;
+  position: relative;     
   
   @include for-tablet-portrait-only {
-    z-index: 3;    
-  }
-
-  @include for-phone-only {
-    display: none;
-  }
+    position: static;
+    justify-content: flex-end;
+    order: 3;
+    width: 100%;
+    z-index: 4;    
+  } 
   
   &__form {
     display: flex;
     align-items: center;
-    position: relative; 
 
-    @include for-tablet-landscape-only {
-      display: none;
+    @include for-tablet-portrait-only {
+      position: relative;
     }
     
     .header__input {
       position: absolute;
-      top: 5px;
+      top: 2px;
       left: 0;
       border: 1px solid $greeninput;
       border-radius: 5px;
@@ -178,9 +215,24 @@
       &.active {
         display: block;
         
-        @include for-big-desktop-only  {
-          top: 109%;          
-          min-width: 300px;
+        @include for-big-desktop-only  { 
+          top: 100%;        
+          left: -70%;         
+          min-width: 277px;
+        } 
+
+        @include for-desktop-only {
+          top: 2px;
+          left: -90%;
+        }
+
+        @include for-tablet-landscape-only {
+          left: -105%;
+        }
+        
+        @include for-tablet-portrait-only {        
+          top: 140%;
+          left: -5px;      
         }
       }                             
     }
@@ -206,13 +258,18 @@
     &--user {
       width: 50px;
       height: 50px;
-      border-radius: 100%;       
+      border-radius: 100%;
+
+      @include for-tablet-landscape-only {
+        width: 40px;
+        height: 40px;
+      }
     }
-  
+    
     &--search {
       background-color: rgba($icon, 0.2);    
       margin: 0 20px 0 180px;
-
+      
       @include for-big-desktop-only  {
         margin: 0 20px 0 0;
       }
@@ -308,21 +365,13 @@
     &--cart {
       border-top-right-radius: 25px;
       border-bottom-right-radius: 25px;
-      margin-right: 17px;
-      
-      @include for-tablet-landscape-only {
-        margin-right: 0;        
-      }
+      margin-right: 17px;      
     }
 
     &--user {
-      background-color: $icon;
-
-      @include for-tablet-landscape-only {
-        display: none;
-      }
+      background-color: $icon;     
       
-      & svg {
+      svg {
         fill: $white;
       }
       
@@ -334,7 +383,7 @@
         background-color: rgba($icon, 0.2); 
         border: 2px solid $greendark;
 
-        & svg {
+        svg {
           fill: $greendark;
         }
       }
@@ -342,7 +391,7 @@
       &:active {
         background-color: $icon; 
         
-        & svg {
+        svg {
           fill: $white;
         }
       }      

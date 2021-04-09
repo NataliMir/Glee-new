@@ -8,6 +8,11 @@
   font-weight: 400;
 }
 
+%rubik-300 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+}
+
 %sans-700 {
   font-family: 'DMSans', sans-serif;
   font-weight: 700;
@@ -16,6 +21,24 @@
 %sans-400 {
   font-family: 'DMSans', sans-serif;
   font-weight: 400;
+}
+
+%poppins-600 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+%line-clamp {
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;  
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
 }
 
 $accent: #fcd7b6;
@@ -38,4 +61,13 @@ $graytextdark: #585858;
 $arrow: #262626;
 $menu: #8b8b8b;
 $menuhover: #1a1a1a;
+$breadc-bg: #edf1f4;
+$breadc: #232a34;
+$aboutline: #e6eaf0;
+$aboutdesc: #4c4c4c;
+$card-team: #565872;
+$boxshadow: #373737;
+$social-icon: #f6f6f6;
+$socialfill: #888;
+
 

@@ -10,32 +10,32 @@ $(function() {
   $('.sliderpartners').slick({
     infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 899,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 3,
+          slidesToScroll: 1,
         }
       },
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 1,
         }
       },
       {
         breakpoint: 574,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         }
       }
     ],
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 2000,
   });
 
