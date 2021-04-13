@@ -12,11 +12,14 @@
     row-gap: 32px;
     column-gap: 32px;
     margin-bottom: 120px;
+
+    @include for-desktop-only {
+      row-gap: 25px;
+      column-gap: 25px;      
+    }
     
     @include for-tablet-landscape-only {
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 25px;
-      column-gap: 25px;
       margin-bottom: 90px;      
     }
     
@@ -60,7 +63,7 @@
     padding: 36px 0 0 35px;
     position: absolute;
     z-index: 2;
-    max-width: 175px;
+    max-width: 210px;
   }
 
   &__name,
@@ -82,7 +85,7 @@
     color: $icon;
   }
   
-  &__visial {    
+  &__visual {    
     position: absolute;
     left: 46%;
     bottom: 35px; 

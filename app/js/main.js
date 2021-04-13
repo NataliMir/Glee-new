@@ -15,22 +15,19 @@ $(function() {
       {
         breakpoint: 899,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToShow: 3,          
         }
       },
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 2,          
         }
       },
       {
         breakpoint: 574,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 1,          
         }
       }
     ],
@@ -49,27 +46,20 @@ $(function() {
     $('body').toggleClass('lock');
   });
 
-  mixitup('.prodweek__items', {
-    selectors: {
-      control: '.filter-1'
-    }
-  });
+  const container1 = document.querySelector('.prodweek__items')
+  const container2 = document.querySelector('.desing__items')
 
-  mixitup('.desing__items', {
-    selectors: {
-      control: '.filter-2'
-    }
-  });  
+  if (container1 && container2) {
+    mixitup(container1, {
+      selectors: {
+        control: '.filter-1'
+      }
+    });
   
-  // var containerEl1 = document.querySelector('[data-ref="container-1"]');
-  // var containerEl2 = document.querySelector('[data-ref="container-2"]');
- 
-  // var config = {
-  //   controls: {
-  //     scope: 'local'
-  //   }
-  // };
- 
-  // var mixer1 = mixitup(containerEl1, config);
-  // var mixer2 = mixitup(containerEl2, config);
+    mixitup(container2, {
+      selectors: {
+        control: '.filter-2'
+      }
+    });
+  }
 });
