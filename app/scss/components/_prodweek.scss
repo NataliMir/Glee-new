@@ -49,51 +49,211 @@
     }    
   } 
   
-  &__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 380px;
+  &__item {   
     position: relative;
     background-color: $white;
     box-shadow: 0px 6px 47px 3px rgba(38, 38, 38, 0.05);
     border-radius: 10px;   
-    padding: 30px 30px 33px;
     transition: background-color .3s ease-in-out;    
     
-    @include for-desktop-only {
-      min-height: 335px;      
-      padding: 25px;      
-    }    
-    
     @include for-phone-only {      
-      margin-bottom: 25px;
+      margin-bottom: 25px;      
     }
     
     &:hover {
       background-color: rgba($accent, 0.2);
-
+      
       .usermenu {
         opacity: 1;        
       }
     }
   } 
   
+  &__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 380px;
+    padding: 30px 30px 33px;
+    overflow: hidden;
+    
+    @include for-desktop-only {
+      min-height: 335px;      
+      padding: 25px;      
+    }    
+  
+    &.prodweek__article--list {
+      flex-direction: row;
+      height: 500px;
+      padding: 0;
+      
+      @include for-desktop-only {
+        height: auto;        
+      }
+
+      @include for-tablet-landscape-only {
+        align-items: flex-start;
+      }
+
+      @include for-phone-only {
+        flex-direction: column;        
+      }
+
+      .usermenu {
+        opacity: 1;
+        top: 79%;
+        left: 57%;
+        
+        @include for-desktop-only {
+          top: 81%;
+          left: 59%;         
+        }
+
+        @include for-tablet-landscape-only {
+          left: 55%;
+        }
+
+        @include for-phone-only {
+          top: 90%;
+          left: 50%;          
+        }
+
+        &__link {
+          display: none;
+        }
+
+        &__btn {
+          border-radius: 0;
+
+          &:not(:last-child) {
+            margin-right: 10px;
+
+            @include for-tablet-portrait-only {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+
+      .prodweek__link {
+        @include for-phone-only {
+          margin: 0 auto;
+        }
+      }
+
+      .prodweek__visual--des {
+        position: static; 
+      }
+
+      .prodweek__visual {
+        max-width: 370px;
+        width: 100%;      
+        min-height: 500px;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        border: 1px solid $titlenum;
+        
+        @include for-desktop-only {
+          min-height: 400px;
+          padding: 15px;          
+        }
+        
+        @include for-tablet-portrait-only {
+          min-height: 350px;             
+        }
+
+        @include for-phone-only {
+          margin-bottom: 20px;          
+        }        
+      }
+      
+      .prodweek__img {
+        width: 320px; 
+        height: max-content;
+
+        @include for-desktop-only {
+          width: 280px;
+        }
+      }
+      
+      .prodweek__content {
+        align-items: start;
+        margin-left: 60px;
+        
+        @include for-tablet-portrait-only {          
+          margin-left: 30px;
+        }
+
+        @include for-phone-only {
+          align-items: center;
+          margin-left: 0;
+        }
+      }
+
+      .prodweek__name {
+        margin-bottom: 20px;
+
+        @include for-desktop-only {
+          margin-bottom: 15px;
+        }
+      }
+
+      .prodweek__star,
+      .prodweek__desc {
+        display: block;
+      }
+
+      .prodweek__star,
+      .prodweek__price,
+      .prodweek__desc {
+        margin-bottom: 40px;
+
+        @include for-desktop-only {
+          margin-bottom: 25px;
+        }
+        
+        @include for-phone-only {
+          margin-bottom: 10px;          
+        }
+      }
+
+      .prodweek__desc {
+        @include line-clamp-3;
+        max-width: 410px;
+
+        @include for-phone-only {
+          margin-bottom: 80px;
+        }
+      }
+    }
+  }
+  
   &__link { 
     display: block;      
   }
   
-  &__visial,
+  &__visual,
   &__content {
     max-width: 100%;
   }
   
-  &__visial {
+  &__visual {
     display: flex;
     align-items: center;
     max-width: 238px;
     min-height: 206px;
+  
+    &--des {
+      overflow: hidden;
+      position: absolute;
+      top: 15%;    
+      right: -20%;   
+      max-width: 300px;
+      min-height: 154px;
+    }
   }
   
   &__content {
@@ -116,13 +276,21 @@
     &:hover {
       color: $icon;
     }
-  }  
+  }
+  
+  &__star {
+    display: none;
+  }
   
   &__price {
     color: $icon;  
     text-transform: uppercase;
     letter-spacing: 1px;
-  }  
+  } 
+  
+  &__desc {
+    display: none;
+  }
 }
 
 .filter {
@@ -198,6 +366,7 @@
 
   @include for-tablet-portrait-only {
     opacity: 1;
+    z-index: 1;
   }
   
   &__link,
@@ -248,6 +417,10 @@
     grid-template-columns: repeat(2, 1fr);    
     column-gap: 34px;
 
+    @include for-desktop-only {
+      column-gap: 25px;
+    }
+
     @include for-tablet-landscape-only {
       display: block;
     }
@@ -273,7 +446,10 @@
     }    
 
     @include for-phone-only {
-      padding: 45px 10px 15px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 10px;
     }
     
     &:not(:last-child) {
@@ -286,18 +462,21 @@
       @include for-tablet-landscape-only {        
         flex-direction: row-reverse;
       }
+
+      @include for-phone-only {
+        flex-direction: column;
+      }
     }
   } 
   
-  &__visial {   
+  &__visual {   
     position: absolute;
     bottom: 80px;
     left: 16%; 
-    max-width: 233px; 
-    height: auto;
+    max-width: 100%;    
+    height: 100%;
     
-    @include for-big-desktop-only  {
-      max-width: 200px;
+    @include for-big-desktop-only  {      
       left: 10%;      
     }
 
@@ -306,18 +485,32 @@
     }
 
     @include for-tablet-landscape-only {
-      position: static;
-      max-width: 300px;
-      width: 100%;      
-      margin: -75px 25px 75px;     
+      position: static;      
+      margin: 35px 15px;     
     }
     
     @include for-phone-only {
-      bottom: 35%;
-      left: 60%;
-      transform: translateX(-10%);
+     margin:0 0 20px;    
     }
   } 
+
+  &__img {
+   
+    height: auto;
+    max-width: 233px;
+
+    @include for-big-desktop-only  {
+      max-width: 180px;
+    }
+
+    @include for-tablet-landscape-only {     
+      max-width: 150px;
+    } 
+    
+    @include for-phone-only {
+      max-width: 120px;      
+    }
+  }
   
   &__content {
     display: flex;
@@ -336,7 +529,7 @@
     }
     
     @include for-tablet-landscape-only {
-      max-width: 280px;
+      max-width: 290px;
       position: static;
       margin:0 25px;
     }    
@@ -352,6 +545,7 @@
     @include for-desktop-only {
       font-size: 22px;
       line-height: 1.1;       
+      text-align: center;
     }
     
     @include for-tablet-landscape-only {
@@ -360,7 +554,7 @@
     }
     
     @include for-phone-only {
-      max-width: 200px;
+      max-width: 290px;
       font-size: 22px;
       line-height: 1.1;      
     }
@@ -371,8 +565,8 @@
     margin-bottom: 30px;
     
     @include for-phone-only {
-      max-width: 200px;
-      margin-bottom: 15px;
+      width: 260px;
+      margin: 0 15px 15px;
     }
   }
 
@@ -387,11 +581,18 @@
     background-color: transparent;
     color: $greendark;
     transition: background-color .3s ease-in,
-    color .3s ease-in, border-color .3s ease-in;    
+    color .3s ease-in, border-color .3s ease-in; 
     
-    svg {
+    @include for-phone-only {      
+      position: relative;
+      min-width: 280px;     
+      padding: 16px 45px;
+      margin: 0 auto;
+    }
+    
+    svg {      
       fill: $greendark;
-      transition: fill .3s ease-in;
+      transition: fill .3s ease-in;      
     }
     
     &:hover {

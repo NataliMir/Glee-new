@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glee | home page</title>
+  <link rel="shortcut icon" href="/images/global/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.min.css">
+</head> 
+  
+<body>
+  @@include('components/_header.html')  
+  
+  <main class="main">
+    <section class="banner">
+      <div class="container">
+        <h1 class="sr-only">Glee shop - italian furniture in Houston</h1>
+        <h2 class="sr-only">The best of smart and trendy</h2>
+        
+        <ul class="slidermain">
+          <li class="slidermain__item">
+            <a class="slidermain__link" href="#">
+              <h3 class="slidermain__title">Smart and trendy</h3>
+              <p>
+                Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+              </p>
+            </a>
+            <a class="slidermain__btn btn" href="#">              
+                Shop Now              
+              <svg>
+                <use xlink:href="images/icons/sprite.svg#arrow"></use>
+              </svg>
+            </a>
+            <div class="slidermain__visual">
+              <img class="slidermain__img" src="images/banner/images-1.png" alt="sofa-lux">
+            </div>
+          </li>
+          <li class="slidermain__item">
+            <a class="slidermain__link" href="#">
+              <h3 class="slidermain__title">Smart and trendy</h3>
+              <p>
+                Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+              </p>
+            </a>
+            <a class="slidermain__btn btn" href="#">              
+                Shop Now              
+              <svg>
+                <use xlink:href="images/icons/sprite.svg#arrow"></use>
+              </svg>
+            </a>
+            <div class="slidermain__visual">
+              <img class="slidermain__img" src="images/banner/images-1.png" alt="sofa-lux">
+            </div>
+          </li>
+          <li class="slidermain__item">
+            <a class="slidermain__link" href="#">
+              <h3 class="slidermain__title">Smart and trendy</h3>
+              <p>
+                Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+              </p>
+            </a>
+            <a class="slidermain__btn btn" href="#">              
+                Shop Now              
+              <svg>
+                <use xlink:href="images/icons/sprite.svg#arrow"></use>
+              </svg>
+            </a>
+            <div class="slidermain__visual">
+              <img class="slidermain__img" src="images/banner/images-1.png" alt="sofa-lux">
+            </div>
+          </li>
+        </ul>
+
+        <ul class="banner__items">
+          <li class="banner__item banner__item--support">
+            <div class="banner__content">
+              <div class="banner__subtitle">Support 24/7.</div>
+              <p>
+                Contact us 24 hours a day, 7 days a week.
+              </p>
+            </div>
+          </li>
+          <li class="banner__item banner__item--delivery">            
+            <div class="banner__content">
+              <div class="banner__subtitle">Delivery.</div>
+              <p>
+                Free shipping on all US order.
+              </p>              
+            </div>
+          </li>
+          <li class="banner__item banner__item--card">            
+            <div class="banner__content">
+              <div class="banner__subtitle">100% Payment secure.</div>
+              <p>           
+                We ensure secure payment with PEV.        
+              </p> 
+            </div>
+          </li>
+        </ul>               
+      </div>       
+    </section>
+
+    <section class="prodweek">
+      <div class="container container--section">
+        <h2 class="title prodweek__title">Products of the week</h2>
+      
+        <ul class="filter">
+          <li class="filter__item">
+            <button class="filter__btn filter-1" type="button" data-filter="all">All</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-1" type="button" data-filter=".category-a">Furnitures</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-1" type="button" data-filter=".category-b">Chairs</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-1" type="button" data-filter=".category-c">Lighting</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-1" type="button" data-filter=".category-d">Decor</button>
+          </li>
+        </ul>         
+        
+        <ul class="prodweek__items">
+          <li class="prodweek__item mix category-a category-d">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-1", "name": "Wooden radio", "price": "$29.00"})  
+          </li>            
+          <li class="prodweek__item mix category-b category-d">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-2", "name": "Wooden chair", "price": "$29.00"})              
+          </li>            
+          <li class="prodweek__item mix category-b category-c">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-3", "name": "White chair", "price": "$29.00"})
+          </li>
+          <li class="prodweek__item mix category-d">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-4", "name": "Retro table", "price": "$29.00"})
+          </li>
+          <li class="prodweek__item mix category-d">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-5", "name": "Wooden radio", "price": "$29.00"})            
+          </li>
+          <li class="prodweek__item mix category-a category-b">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-6", "name": "Wooden chair", "price": "$29.00"})
+          </li>
+          <li class="prodweek__item mix category-a category-b category-c category-d">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-7", "name": "White chair", "price": "$29.00"})       
+          </li>
+          <li class="prodweek__item mix category-a category-d">
+            @@include('components/_product-article.html', {
+              "classes": "prodweek__visual",
+              "image": "productes-week/product-8", "name": "Retro table", "price": "$29.00"})            
+          </li>
+        </ul>        
+      </div>
+
+      <div class="prodlamp">
+        <div class="container">
+          <ul class="prodlamp__items">
+            <li class="prodlamp__item">
+              <div class="prodlamp__visual">
+                <img class="prodlamp__img" src="images/productes-week/lamp-1.png" alt="table lamp">
+              </div>
+              <div class="prodlamp__content">
+                <h3 class="prodlamp__title">
+                  Mirum notare tellus
+                </h3>
+                <p>
+                  LEDCornBulb Lamp 5W 7W 10W 12W 15W E26 E27LEDCornLight
+                </p>
+                <a class="prodlamp__btn btn" href="#">                  
+                    View More                 
+                  <svg>
+                    <use xlink:href="images/icons/sprite.svg#arrow"></use>
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="prodlamp__item">
+              <div class="prodlamp__visual">
+                <img class="prodlamp__img" src="images/productes-week/lamp-2.png" alt="floor lamp">
+              </div>
+              <div class="prodlamp__content">
+                <h3 class="prodlamp__title">
+                  Malesuada tempor euismod
+                </h3>
+                <p>
+                  50W 8000lm Compact Size for HID StreetLightReplacementLEDCornLight
+                </p>
+                <a class="prodlamp__btn btn" href="#">                 
+                    View More                
+                  <svg>
+                    <use xlink:href="images/icons/sprite.svg#arrow"></use>
+                  </svg>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="desing">
+      <div class="container container--section">
+        <h2 class="title desing__title">New design</h2>
+       
+        <ul class="filter">
+          <li class="filter__item">
+            <button class="filter__btn filter-2" type="button" data-filter="all">All</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-2" type="button" data-filter=".category-e">Furnitures</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-2" type="button" data-filter=".category-f">Chairs</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-2" type="button" data-filter=".category-x">Lighting</button>
+          </li>
+          <li class="filter__item">
+            <button class="filter__btn filter-2" type="button" data-filter=".category-q">Decor</button>
+          </li>
+        </ul>
+
+        <ul class="desing__items">
+          <li class="desing__item mix category-x category-q">
+            <a class="desing__link" href="#">
+              <div class="desing__content">
+                <h3 class="desing__name">
+                  Beat flat pendant  black
+                </h3>
+                <span class="desing__category">Classic</span>
+              </div>
+              <div class="desing__visual">
+                <img class="desing__img" src="images/desing/image-1.png" alt="image furniture">
+              </div>
+            </a>
+          </li>
+          <li class="desing__item mix category-e">
+            <a class="desing__link" href="#">
+              <div class="desing__content">
+                <h3 class="desing__name">
+                  Lampe sur pieds bamboo
+                </h3>
+                <span class="desing__category">Classic</span>
+              </div>
+              <div class="desing__visual">
+                <img class="desing__img" src="images/desing/image-2.png" alt="image furniture">
+              </div>
+            </a>
+          </li>
+          <li class="desing__item mix category-f category-q">
+            <a class="desing__link" href="#">
+              <div class="desing__content">
+                <h3 class="desing__name">
+                  Rattan rocking chair
+                </h3>
+                <span class="desing__category">Classic</span>
+              </div>
+              <div class="desing__visual">
+                <img class="desing__img" src="images/desing/image-3.png" alt="image furniture">
+              </div>
+            </a>
+          </li>
+          <li class="desing__item mix category-e category-f category-q">
+            <a class="desing__link" href="#">
+              <div class="desing__content">
+                <h3 class="desing__name">
+                  Rattan rocking chair
+                </h3>
+                <span class="desing__category">Classic</span>
+              </div>
+              <div class="desing__visual">
+                <img class="desing__img" src="images/desing/image-4.png" alt="image furniture">
+              </div>
+            </a>
+          </li>
+          <li class="desing__item mix category-f category-q">
+            <a class="desing__link" href="#">
+              <div class="desing__content">
+                <h3 class="desing__name">
+                  Rattan rocking chair
+                </h3>
+                <span class="desing__category">Classic</span>
+              </div>
+              <div class="desing__visual">
+                <img class="desing__img" src="images/desing/image-5.png" alt="image furniture">
+              </div>
+            </a>
+          </li>
+          <li class="desing__item mix category-e category-q">
+            <a class="desing__link" href="#">
+              <div class="desing__content">
+                <h3 class="desing__name">
+                  Lampe sur pieds bamboo
+                </h3>
+                <span class="desing__category">Classic</span>
+              </div>
+              <div class="desing__visual">
+                <img class="desing__img" src="images/desing/image-6.png" alt="image furniture">
+              </div>
+            </a>
+          </li>
+        </ul>        
+      </div>
+
+      <a class="videodes__link" style="background-image: url(images/desing/desing-bg.jpg)" href="https://www.youtube.com/watch?v=OWZzoq8LJAI" data-fancybox>
+        <span class="sr-only">открыть видео</span>
+        <span class="videodes__icon">
+          <svg>
+            <use xlink:href="images/icons/sprite.svg#triangle"></use>
+          </svg>
+        </span>
+      </a>       
+    </section>
+
+    <section class="news">
+      <div class="container container--section">
+        <div class="news__header">
+          <h2 class="title news__title">Our insights & articles</h2>
+          <a class="news__link--btn" href="#">View all</a>
+        </div>
+      </div>
+      <div class="news__inner">
+        <div class="container container--section">
+          <ul class="news__items">
+            @@loop("components/_new.html", "../json/new.json")
+          </ul>
+          @@include('components/_partners.html', {           
+            "classes": "partners"})
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @@include('components/_footer.html')
+
+  <script src="js/main.min.js"></script>
+</body>
+</html>

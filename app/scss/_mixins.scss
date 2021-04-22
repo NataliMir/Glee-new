@@ -14,22 +14,28 @@
   @media (max-width: 1535px) { @content; }
 }
 
+@mixin line-clamp {
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;
+  overflow: hidden;  
+}
+
 @mixin line-clamp-4 {
-  @extend %line-clamp;
+  @include line-clamp;
   -webkit-line-clamp: 4;  
 } 
 
 @mixin line-clamp-3 {
-  @extend %line-clamp;
+   @include line-clamp;  
   -webkit-line-clamp: 3;  
 } 
 
 @mixin line-clamp-2 {
-  @extend %line-clamp;  
+   @include line-clamp;  
   -webkit-line-clamp: 2;  
 }
 
 @mixin line-clamp-1 {
-  @extend %line-clamp;  
+   @include line-clamp;  
   -webkit-line-clamp: 1;  
 }

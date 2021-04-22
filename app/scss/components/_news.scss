@@ -104,7 +104,7 @@
     }
   }  
 
-  &__visial {   
+  &__visual {   
     height: 250px; 
     background-color: $news-bg;
     transition: transform .5s ease-in-out;
@@ -220,7 +220,7 @@
   }
 }
 
-.sliderpartners {  
+.partners {  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -230,13 +230,13 @@
     height: 200px;
   }
 
-  @include for-phone-only {
-    justify-content: center;
+  @include for-phone-only {    
     height: 180px;
   }
   
   .slick-track {
     display: flex;
+    justify-content: space-between;
     align-items: center;   
   }
   
@@ -266,4 +266,3 @@
     margin: 0 auto;    
   }
 }
-

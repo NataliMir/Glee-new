@@ -1,5 +1,4 @@
-.about {   
-
+.about {
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -19,38 +18,36 @@
     }
   }
   
-  &__visial {
+  &__visual {
     width: 100%;
-    height: 100%;
-
+    height: 100%;    
+    
     @include for-tablet-landscape-only {
       max-width: 400px;
       margin: 0 auto 30px;
     }
-    
-    @include for-tablet-landscape-only {
+
+    @include for-phone-only {
       max-width: 290px;      
-    }
+    }    
   }
   
-  &__img {    
-    min-height: 676px;
+  &__img { 
     max-width: 570px;
+    height: auto;    
     object-fit: cover;
     
     @include for-desktop-only {
-      max-width: 400px;
-      min-height: 480px;      
+      max-width: 400px;    
     }
     
     @include for-phone-only {
-      max-width: 290px;
-      min-height: 310px;     
+      max-width: 290px;      
     }
   } 
 
   &__content {
-    padding: 85px 15px 90px 45px;
+    padding: 65px 15px 90px 45px;
     
     @include for-desktop-only {
       padding: 15px 15px 15px 25px;      
@@ -63,29 +60,35 @@
 
   &__box {
     display: flex;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
     
     @include for-desktop-only {
-      margin-bottom: 30px;      
+      margin-bottom: 20px;      
     }
 
     @include for-tablet-landscape-only {      
       max-width: 235px;
-      margin: 0 auto 30px;
+      margin: 0 auto 20px;
     }
   }  
   
-  &__pic {
+  &__pic {    
+    @extend %rubik-700;
+    font-size: 140px;    
+    color: $icon;    
+    line-height: 1;
+
     @include for-desktop-only {
-      width: 120px;
-      height: 80px;
-    }
-  }  
+      font-size: 120px;      
+    }  
+  }
+  
   
   &__list {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    padding-top: 15px;
     margin-left: 30px;
   }  
 
@@ -116,9 +119,9 @@
     }
   }  
 
-  &__text {
+  p {
     @include line-clamp-4;
-    margin-bottom: 57px;
+    margin-bottom: 55px;
     
     @include for-desktop-only {
       margin-bottom: 35px;      
@@ -127,10 +130,25 @@
 
   &__items {
     display: flex;
-    justify-content: space-between;
-    border-top: 3px solid transparent;
-    border-image: linear-gradient(to right, $aboutline 90%,transparent 90%) 1 1;
-    padding-top: 34px;
+    justify-content: space-between;    
+    padding-top: 35px;
+    position: relative;
+
+    &::before {
+      content: '';
+      max-width: 500px;
+      width: 92%;      
+      height: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $aboutline;
+
+      @include for-desktop-only {
+       max-width: 840px;
+       width: 100%;
+      }      
+    }
     
     @include for-desktop-only {
       display: grid;
@@ -138,11 +156,7 @@
       grid-column-gap: 20px;
       text-align: center;
       padding-top: 70px;      
-    }
-    
-    @include for-tablet-landscape-only {      
-      border-image: linear-gradient(to right, $aboutline 100%,transparent 100%) 1 1;
-    }
+    }    
   }
 
   &__item {
@@ -231,65 +245,6 @@
   &__desc {
     color: $aboutdesc;
   }  
-}
-
-.breadcrumbs {
-  min-height: 125px;
-  background-color: $breadc-bg;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  @include for-tablet-landscape-only {
-    min-height: 100px;    
-  }
-  
-  &__title {
-    @extend %rubik-300;
-    font-size: 36px;
-    color: $data;
-    line-height: 1;  
-    text-transform: capitalize;
-    
-    @include for-tablet-landscape-only {
-      font-size: 30px;      
-    }
-    
-    @include for-phone-only {
-      font-size: 26px;      
-    }
-  }  
-
-  &__list {
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  &__item {
-    position: relative;
-    
-    &:not(:last-child) {
-      padding-right: 18px;
-      
-      &::after {
-        content: '/'; 
-        position: absolute;
-        top: 0;
-        right: 4px;
-      }        
-    }     
-  }    
-
-  &__link {
-    font-size: 14px;    
-    color: rgba($breadc, .6);
-    line-height: 1.7;
-    
-    &--active {
-      color: $data;
-    }
-  }
 }
 
 .statistics {

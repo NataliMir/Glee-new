@@ -1,0 +1,76 @@
+.breadcrumbs {
+  min-height: 125px;
+  background-color: $breadc-bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  @include for-tablet-landscape-only {
+    min-height: 100px;    
+  }
+  
+  &__title {
+    @extend %rubik-300;
+    font-size: 36px;
+    color: $data;
+    line-height: 1;  
+    text-transform: capitalize;
+    
+    @include for-tablet-landscape-only {
+      font-size: 30px;      
+    }
+    
+    @include for-phone-only {
+      font-size: 26px;      
+    }
+  }  
+
+  &__list {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  &__item {
+    position: relative;
+    
+    &:not(:last-child) {
+      padding-right: 18px;
+      
+      &::after {
+        content: '/'; 
+        position: absolute;
+        top: 0;
+        right: 4px;
+        color: rgba($breadc, .6);
+      }        
+    }     
+  }    
+
+  &__link,
+  &__point {
+    font-size: 14px;    
+    color: rgba($breadc, .6);
+    line-height: 1.7;
+  }
+  
+  &__link {
+    border-bottom: 1px solid transparent;
+    transition: color .3s ease-in, border-color .3s ease-in;
+         
+    &:hover {
+      color: $data;
+      border-color: $data;
+    }
+
+    &:focus {
+      outline-color: $greendark;
+    }     
+  }
+
+  &__point {
+    &--active {
+      color: $data;
+    }
+  }
+}

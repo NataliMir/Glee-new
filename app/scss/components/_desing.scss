@@ -12,11 +12,14 @@
     row-gap: 32px;
     column-gap: 32px;
     margin-bottom: 120px;
+
+    @include for-desktop-only {
+      row-gap: 25px;
+      column-gap: 25px;      
+    }
     
     @include for-tablet-landscape-only {
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 25px;
-      column-gap: 25px;
       margin-bottom: 90px;      
     }
     
@@ -34,20 +37,20 @@
     overflow: hidden;
     background-color: $desing-bg;
     transition: background-color .3s ease-in;
-
-    &::hover {
-      background-color: rgba($accent, .1);
-    }
     
     @include for-desktop-only {
-      min-height: 200px;
+      min-height: 235px;
       padding: 25px 0 0 25px;
     }
     
     @include for-tablet-portrait-only {
       max-width: 340px;
       width: 100%;
-    }    
+    } 
+
+    &::hover {
+      background-color: rgba($accent, .1);
+    }
   }
   
   &__link {
@@ -57,10 +60,15 @@
   }
   
   &__content {
+    max-width: 210px;
     padding: 36px 0 0 35px;
     position: absolute;
     z-index: 2;
-    max-width: 175px;
+    
+    @include for-desktop-only {
+      max-width: 165px;
+      padding: 0;
+    }
   }
 
   &__name,
@@ -82,7 +90,7 @@
     color: $icon;
   }
   
-  &__visial {    
+  &__visual {    
     position: absolute;
     left: 46%;
     bottom: 35px; 

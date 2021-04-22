@@ -163,7 +163,7 @@
     }
     
     @include for-tablet-landscape-only {
-      padding: 90px 0 110px 80px;      
+      padding: 90px 0 110px 20px;      
     } 
     
     @include for-phone-only {
@@ -202,7 +202,7 @@
       }
 
       @include for-phone-only {
-        top: 10%;
+        top: 5px;       
       }
     }
   } 
@@ -309,8 +309,10 @@
     }
 
     @include for-phone-only {
-      top: 38%;
-      left: 18%;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      right: 0;
     }
   }
 
