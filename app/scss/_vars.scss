@@ -38,12 +38,6 @@
   font-weight: 600;
 }
 
-%line-clamp {
-  display: -webkit-box;  
-  -webkit-box-orient: vertical;
-  overflow: hidden;  
-}
-
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});
 }
@@ -51,9 +45,19 @@
   @return m#{i}n(#{$numbers});
 }
 
+%input-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+
 $accent: #fcd7b6;
 $white: #fff;         
 $titlemain: #243f4d;
+$titlelamp: #333333;
+$titlenum: #dcdcdc;
 $desing-bg: #f8f8f8;
 $video-bg: #e6e6e6;
 $news-bg: #e1e1e1;
