@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 44px;
+    margin-bottom: 42px;
   }
 
   &__title {
@@ -215,8 +215,8 @@
     }
   }   
   
-  &__author {          
-    margin-left: 25px;    
+  &__data {          
+    margin-right: 20px;    
   }
 }
 

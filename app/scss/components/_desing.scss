@@ -90,7 +90,7 @@
     color: $icon;
   }
   
-  &__visual {    
+  &__visual {     
     position: absolute;
     left: 46%;
     bottom: 35px; 
@@ -111,8 +111,9 @@
   }
 
   &__img {
-    height: 100%;
-    max-width: max-content;
+    height: auto;
+    max-width: 417px;
+    object-fit: cover;
   }
 }
 
@@ -120,11 +121,12 @@
   &__link {
     display: flex; 
     justify-content: center;  
+    position: relative;
     background-color: $video-bg;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 201px 0;
+    padding: 200px 0;
     overflow: hidden;
 
     @include for-tablet-landscape-only {
@@ -134,41 +136,41 @@
     @include for-phone-only {
       display: none;
     }
-  }
-  
-  &__icon {
-    display: block;    
-    position: relative;
-    width: 98px;
-    height: 98px;
-    border-radius: 100%;
-    background-color: $icon; 
-    transition: background-color .3s ease-in;
-    outline: transparent;
 
-    @include for-tablet-landscape-only {
-      width: 65px;
-      height: 65px;
-    }
-    
+    &::after,
     &::before {
       content: '';
-      display: block;
-      width: 127px;
-      height: 127px;
+      display: block;    
       border-radius: 100%;
-      background-color: rgba($icon, 0.4); 
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 1;
+      transform: translate(-50%,-50%);
+      transition: background-color .3s ease-in;      
+      outline: transparent;
+    }
+    
+    &::after {
+      width: 98px;
+      height: 98px;
+      background-color: $icon;
+  
+      @include for-tablet-landscape-only {
+        width: 65px;
+        height: 65px;
+      }
+    }
 
+    &::before {      
+      width: 127px;
+      height: 127px;     
+      background-color: rgba($icon, 0.4);       
+  
       @include for-tablet-landscape-only {
         width: 90px;
         height: 90px;
       }
-    }    
+    }           
 
     svg {      
       width: 22px;
@@ -178,16 +180,25 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      z-index: 2;
       outline: transparent;
       transition: fill .3s ease-in;
-
-      &:hover {
-        fill: $greeninput;
-      }
-
+     
       &:focus {
         fill: $white;
       }
+    }
+
+    &:hover::after {
+      background-color: $white;
+    }
+
+    &:hover svg {
+      fill: $greeninput;
+    }
+
+    &:hover::before {
+      background-color: rgba($icon, 0.8); 
     }
 
     &:focus {

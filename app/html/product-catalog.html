@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glee | catalog</title>
-  <link rel="shortcut icon" href="/images/global/favicon.png" type="image/png">
-  <link rel="stylesheet" href="css/style.min.css">
-</head> 
+
+@@include('components/_head.html', {
+  "title": "catalog"})
   
 <body>  
   @@include('components/_header.html')  
@@ -26,62 +21,62 @@
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-1", "name": "Wooden radio", "price": "$29.00"})  
+                  "image": "productes-week/product-1", "name": "Wooden radio", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})  
               </li>            
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-2", "name": "Wooden chair", "price": "$29.00"})              
+                  "image": "productes-week/product-2", "name": "Wooden chair", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})              
               </li>            
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-3", "name": "White chair", "price": "$29.00"})
+                  "image": "productes-week/product-3", "name": "White chair", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-4", "name": "Retro table", "price": "$29.00"})
+                  "image": "productes-week/product-4", "name": "Retro table", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-5", "name": "Wooden radio", "price": "$29.00"})            
+                  "image": "productes-week/product-5", "name": "Wooden radio", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})            
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-4", "name": "Retro table", "price": "$29.00"})
+                  "image": "productes-week/product-4", "name": "Retro table", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-6", "name": "Wooden chair", "price": "$29.00"})
+                  "image": "productes-week/product-6", "name": "Wooden chair", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-7", "name": "White chair", "price": "$29.00"})       
+                  "image": "productes-week/product-7", "name": "White chair", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})       
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "productes-week/product-8", "name": "Retro table", "price": "$29.00"})            
+                  "image": "productes-week/product-8", "name": "Retro table", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})            
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual prodweek__visual--des",
-                  "image": "desing/image-2", "name": "Wooden chair", "price": "$29.00"})            
+                  "image": "desing/image-2", "name": "Wooden chair", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})            
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual",
-                  "image": "desing/image-5", "name": "White chair", "price": "$29.00"})            
+                  "image": "desing/image-5", "name": "White chair", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})            
               </li>
               <li class="product__item prodweek__item">
                 @@include('components/_product-article.html', {
                   "classes": "prodweek__visual prodweek__visual--des",
-                  "image": "desing/image-4", "name": "Retro table", "price": "$29.00"})            
+                  "image": "desing/image-4", "name": "Retro table", "price": "$29.00", "desc": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"})            
               </li>
             </ul>            
             @@include('components/_pagination.html')    

@@ -11,6 +11,7 @@
 
   &__inner {
     display: flex;
+    align-items: flex-start;
 
     @include for-desktop-only {
       flex-direction: column;
@@ -113,9 +114,9 @@
     }
   }
 
-  &__items {
+  &__items {    
     display: grid;
-    max-width: 770px;
+    max-width: 770px;    
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 100px;
     grid-column-gap: 30px;
@@ -133,7 +134,7 @@
   } 
 
   &__item {
-    position: relative;
+    position: relative;     
     
     @include for-desktop-only {
       position: static;
@@ -194,18 +195,18 @@
 
   &__name {    
     font-size: 22px;
-    line-height: 1.8;
+    line-height: 1.2;
     @extend %sans-700;
     color: $greendark; 
     
     @include for-phone-only {
-      font-size: 20px;
-      line-height: 1.6;      
+      font-size: 20px;      
     }
   } 
   
   &__desc {    
     color: $card-team;
+    letter-spacing: 0.8px;
   }
 
   &__social {

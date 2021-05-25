@@ -1,0 +1,7 @@
+[
+  {"classes": "filter__btn filter-1", "data-filter": "all", "name": "All"},
+  {"classes": "filter__btn filter-1", "data-filter": ".category-a", "name": "Furnitures"},
+  {"classes": "filter__btn filter-1", "data-filter": ".category-b", "name": "Chairs"},
+  {"classes": "filter__btn filter-1", "data-filter": ".category-c", "name": "Lighting"},
+  {"classes": "filter__btn filter-1", "data-filter": ".category-d", "name": "Decor"}
+]
