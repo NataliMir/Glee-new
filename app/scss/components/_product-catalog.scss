@@ -295,7 +295,7 @@
         background-color: rgba($icon, .2);
       }     
       
-      &:not(.option__input--brand:checked):hover {
+      &:hover {
         .option__num--brand,
         .option__name--brand {
           color: $icon;
