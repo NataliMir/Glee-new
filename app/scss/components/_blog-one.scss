@@ -507,7 +507,10 @@
   }
 
   &__label:not(:last-child) {
-    margin-bottom: 20px;
+    
+    @include for-tablet-landscape-only {
+      margin-bottom: 20px;      
+    }
   }
   
   &__label,
