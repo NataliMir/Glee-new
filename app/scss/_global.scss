@@ -23,14 +23,15 @@ body {
   padding: 0 15px;
   
   &--section {
-    max-width: 1200px;
+    max-width: 1200px;    
+    margin: 0 auto;
+    padding: 0 15px;
   }
 
   &--partners {
     max-width: 1060px;   
   }
 }
-
 
 .sr-only {
   position: absolute;

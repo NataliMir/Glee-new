@@ -85,17 +85,15 @@
     }    
   
     &.prodweek__article--list {
+      justify-content: flex-start;
+      align-items: flex-start;
       flex-direction: row;
       height: 500px;
       padding: 0;
       
       @include for-desktop-only {
         height: auto;        
-      }
-
-      @include for-tablet-landscape-only {
-        align-items: flex-start;
-      }
+      }     
 
       @include for-phone-only {
         flex-direction: column;        
@@ -103,15 +101,16 @@
 
       .usermenu {
         opacity: 1;
-        top: 79%;
+        top: 75%;
         left: 57%;
         
         @include for-desktop-only {
           top: 81%;
           left: 59%;         
         }
-
+        
         @include for-tablet-landscape-only {
+          top: 77%;
           left: 55%;
         }
 
@@ -126,6 +125,8 @@
 
         &__btn {
           border-radius: 0;
+          width: 50px;
+          height: 50px;
 
           &:not(:last-child) {
             margin-right: 10px;
@@ -180,45 +181,59 @@
       }
       
       .prodweek__content {
-        align-items: start;
-        margin-left: 60px;
+        display: block;
+        max-width: 440px;
+        padding-top: 75px;       
+        margin-left: 70px;
+        
+        @include for-desktop-only {
+          padding-top: 40px; 
+          margin-left: 40px;
+        }
         
         @include for-tablet-portrait-only {          
+          padding-top: 20px; 
           margin-left: 30px;
         }
 
         @include for-phone-only {
-          align-items: center;
-          margin-left: 0;
+          padding-top: 0;
+          margin: 0 auto;          
         }
       }
 
       .prodweek__name {
-        margin-bottom: 20px;
-
+        font-size: 40px; 
+        @extend %rubik-400;
+        color: $titlelamp;       
+        margin-bottom: 10px;         
+        
         @include for-desktop-only {
-          margin-bottom: 15px;
+          margin-bottom: 5px;
         }
-      }
-
-      .prodweek__star,
-      .prodweek__desc {
-        display: block;
       }
 
       .prodweek__star,
       .prodweek__price,
       .prodweek__desc {
-        margin-bottom: 40px;
-
-        @include for-desktop-only {
-          margin-bottom: 25px;
-        }
+        display: block;      
+        margin-bottom: 25px;
         
-        @include for-phone-only {
-          margin-bottom: 10px;          
+        @include for-desktop-only {
+          margin-bottom: 20px;
         }
+
+        @include for-tablet-portrait-only {
+          margin-bottom: 10px;          
+        }       
       }
+      
+      .prodweek__price {
+        @extend %rubik-400;
+        font-size: 30px;
+        color: $titlelamp;
+        line-height: 1.5;        
+      }     
 
       .prodweek__desc {
         @include line-clamp-3;
@@ -474,7 +489,7 @@
     bottom: 80px;
     left: 16%; 
     max-width: 100%;    
-    height: 100%;
+    height: auto;
     
     @include for-big-desktop-only  {      
       left: 10%;      
@@ -494,10 +509,9 @@
     }
   } 
 
-  &__img {
-   
-    height: auto;
+  &__img {    
     max-width: 233px;
+    object-fit: contain;
 
     @include for-big-desktop-only  {
       max-width: 180px;

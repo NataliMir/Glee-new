@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/_head.html', {
+  "title": "blog-list"})
+  
+<body>  
+  @@include('components/_header.html')  
+
+  <main class="main">
+    @@include('components/_breadcrumbs.html', {"title": "Blog"})
+
+    <section class="blog">
+      <div class="container container--section">
+        <div class="blog__wrap">
+          @@include('components/_product-top.html')
+          <div class="blog__inner">
+            <div class="blog__content">
+              <ul class="blog__items">
+                @@loop('components/_blog-item.html', '../json/blog.json')
+              </ul>
+  
+              @@include('components/_pagination.html')           
+            </div>
+  
+            <div class="blog__aside">
+              <div class="search">
+                <form class="search__form" action="#">
+                  <label class="search__label">
+                    <input class="search__input" type="text" required>
+                  </label>
+                  <button class="search__btn" type="submit">
+                    <span class="sr-only">open search input</span>                  
+                    <svg class="icon">
+                      <use xlink:href="images/icons/sprite.svg#search-blog"></use>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              @@include('components/_option-category.html')
+              <div class="recent">
+                <h3 class="recent__title option__title">
+                  Recent posts
+                </h3>
+                <ul class="recent__items">                
+                  @@loop('components/_recent-item.html',
+                   [
+                   {"image": "photo small-1", "text": "Corem ipsum dolor tetur adipisicing elit", "data": "28 january.2020"},
+                   {"image": "photo small-2", "text": "Fdipisicing elit, sed do eiusmod tempor", "data": "28 january.2020"},
+                   {"image": "photo small-3", "text": "Eonsectetur adipisicing elit, sed do eiusmod ", "data": "28 january.2020"},
+                   {"image": "photo small-4", "text": "gnim ad minim veniam, quis nostrud ", "data": "28 january.2020"}
+                   ])
+                </ul>
+              </div>
+            </div>          
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="product__wrap">
+        @@include('components/_partners.html', {             
+          "classes": "partners partners--small"})
+      </div>
+    </section>   
+   
+  </main>  
+
+  @@include('components/_footer.html')
+
+  <script src="js/main.min.js"></script>
+</body>
+</html>

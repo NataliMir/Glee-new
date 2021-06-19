@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/_head.html', {
+  "title": "blog-one"})
+  
+<body>  
+  @@include('components/_header.html')  
+
+  <main class="main">
+    @@include('components/_breadcrumbs.html', {"title": "Blog Details"})
+    
+
+    <section class="blog-one">
+      <div class="container container--section">
+        <div class="blog-one__wrap">
+          @@include('components/_product-top.html')
+          <div class="blog-one__inner">
+            <div class="blog-one__content">
+              <div class="blog__visual blog-one__visual">                
+                <img class="blog__img" src="../images/blog/photo-1.jpg" alt="photo desing of room">               
+                <div class="blog__meta">
+                  <time class="blog__data" datetime="2020-02-28">
+                    <a class="blog__link" href="#">
+                      <svg>
+                        <use xlink:href="images/icons/sprite.svg#calendar"></use>
+                      </svg>
+                      28 january.2020
+                    </a>
+                  </time>
+                  <span class="blog__author">
+                    <a class="blog__link" href="#">
+                      <svg>
+                        <use xlink:href="images/icons/sprite.svg#author-sign"></use>
+                      </svg> 
+                      by admin
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="blog-one__text">
+                <h3>
+                  Fonsectetur adipisicing eiusmod
+                </h3>
+                <p>
+                  Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                </p>
+                <p>
+                  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                </p>
+                <blockquote>
+                  Sdipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                  <cite>Wiusmod tempor</cite>
+                </blockquote>                
+                <img class="left-img" src="../images/blog/photo middle-1.jpg.png" alt="photo desing of room">
+                <h4>
+                  Riusmod tempor incididunt 
+                </h4>
+                <p>
+                  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+                </p>
+                <h4>
+                  Kajtsal jervcm eoaspckred
+                </h4>
+                <p>
+                  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+                </p>
+              </div>
+              <div class="blog-one__author">
+                <div class="blog-one__block">
+                  <a class="blog-one__link--image" href="#">
+                    <img class="blog-one__image" src="../images/blog/author-1.jpg" alt="Mark N. Hernandez
+                    Designer">
+                  </a>
+                  <div class="blog-one__desc">
+                    <a class="blog-one__link" href="#">
+                      <p class="blog-one__name">Mark N. Hernandez</p>
+                    </a>
+                    <p class="blog-one__special">Designer</p>
+                  </div>
+                </div>
+                <div class="blog-one__box">
+                  <div class="blog-one__tags">
+                    <span class="blog-one__subtitle">
+                      Tags:
+                    </span>
+                    <a class="blog-one__link" href="#">All,</a>
+                    <a class="blog-one__link" href="#">Trending</a>
+                  </div>
+                  <div class="blog-one__socials">
+                    <span class="blog-one__subtitle">
+                      Share:
+                    </span>
+                    <ul class="socials__items">
+                      <li class="socials__item">
+                        <a class="socials__link--facebook" href="#">
+                          <span class="sr-only">open the Mark N. Hernandez facebook page</span>
+                          <svg>
+                            <use xlink:href="images/icons/sprite.svg#facebook"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="socials__item">
+                        <a class="socials__link--twitter" href="#">
+                          <span class="sr-only">open the Mark N. Hernandez twitter page</span>
+                          <svg>
+                            <use xlink:href="images/icons/sprite.svg#twitter"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="socials__item">
+                        <a class="socials__link--instagram" href="#">
+                          <span class="sr-only">open the Mark N. Hernandez instagram page</span>
+                          <svg>
+                            <use xlink:href="images/icons/sprite.svg#instagram"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li class="socials__item">
+                        <a class="socials__link--google" href="#">
+                          <span class="sr-only">open the Mark N. Hernandez google+ page</span>
+                          <svg>
+                            <use xlink:href="images/icons/sprite.svg#google+"></use>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>             
+              <div class="comments">
+                <h3 class="comments__title">
+                  3 Comments
+                </h3>
+                <ul class="comments__items">             
+                @@loop('components/_comments.html', '../json/comments.json')
+                </ul>
+                <h3 class="comments__title comments__title--form">
+                  Leave A Comment
+                </h3>
+                <form class="comments__form">
+                  <div class="comments__textbox">
+                    <label class="comments__label">
+                      <input class="comments__input" type="text" placeholder="Name" required>
+                      <svg>
+                        <use xlink:href="images/icons/sprite.svg#user-blog"></use>
+                      </svg>
+                    </label>
+                    <label class="comments__label">
+                      <input class="comments__input" type="email" placeholder="youremail@gmail.com" required>
+                      <svg>
+                        <use xlink:href="images/icons/sprite.svg#email"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div class="comments__textareabox">
+                    <textarea class="comments__textarea" placeholder="Comment" required></textarea>
+                    <svg>
+                      <use xlink:href="images/icons/sprite.svg#comment"></use>
+                    </svg>
+                  </div>
+                  <button class="comments__btn form__btn" type="submit">Post Comment</button>
+                </form>
+              </div>
+            </div>
+  
+            <div class="blog__aside">
+              <div class="search">
+                <form class="search__form" action="#">
+                  <label class="search__label">
+                    <input class="search__input" type="text" required>
+                  </label>
+                  <button class="search__btn" type="submit">
+                    <span class="sr-only">open search input</span>                  
+                    <svg class="icon">
+                      <use xlink:href="images/icons/sprite.svg#search-blog"></use>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              @@include('components/_option-category.html')
+              <div class="recent">
+                <h3 class="recent__title option__title">
+                  Recent posts
+                </h3>
+                <ul class="recent__items">                
+                  @@loop('components/_recent-item.html',
+                   [
+                   {"image": "photo small-1", "text": "Corem ipsum dolor tetur adipisicing elit", "data": "28 january.2020"},
+                   {"image": "photo small-2", "text": "Fdipisicing elit, sed do eiusmod tempor", "data": "28 january.2020"},
+                   {"image": "photo small-3", "text": "Eonsectetur adipisicing elit, sed do eiusmod ", "data": "28 january.2020"},
+                   {"image": "photo small-4", "text": "gnim ad minim veniam, quis nostrud ", "data": "28 january.2020"}
+                   ])
+                </ul>
+              </div>
+            </div>          
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="product__wrap">
+        @@include('components/_partners.html', {         
+          "classes": "partners partners--small"})
+      </div>
+    </section>   
+   
+  </main>  
+
+  @@include('components/_footer.html')
+
+  <script src="js/main.min.js"></script>
+</body>
+</html>

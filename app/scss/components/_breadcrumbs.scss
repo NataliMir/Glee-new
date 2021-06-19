@@ -59,8 +59,8 @@
     transition: color .3s ease-in, border-color .3s ease-in;
          
     &:hover {
-      color: $data;
-      border-color: $data;
+      color: $accent;
+      border-color: $accent;
     }
 
     &:focus {

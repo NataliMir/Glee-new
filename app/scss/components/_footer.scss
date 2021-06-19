@@ -244,8 +244,7 @@
     max-width: 170px;
     width: 100%;
     border: none;
-    outline: 1px solid transparent;
-    cursor: pointer;
+    outline: 1px solid transparent;    
     transition: outline-color .3s ease-in-out;    
     
     @include for-desktop-only {

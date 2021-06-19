@@ -1,4 +1,45 @@
-.banner {   
+.banner {
+  &__wrap {
+    background-color: $accent;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      max-width: 609px;
+      width: 100%;
+      min-height: 634px;
+      background-image: url('../images/banner/cirсle.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 12%;
+      right: 10%;           
+      
+      @include for-big-desktop-only  {
+        max-width: 450px;        
+        min-height: 470px;
+        top: 16%;
+        right: 5%;
+      }
+
+      @include for-desktop-only {
+        max-width: 289px;        
+        min-height: 300px;        
+      }
+
+      @include for-tablet-landscape-only {
+        max-width: 225px;        
+        min-height: 235px;
+      }
+
+      @include for-phone-only {
+        top: 5px;       
+      }
+    }
+  } 
+
   &__items {
     background-color: rgba($accent, 0.2);  
     display: grid;
@@ -16,9 +57,9 @@
   &__item {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
+    align-items: center;    
     padding: 36px 0; 
+    position: relative;
     
     @include for-desktop-only {      
       padding: 70px 0 36px;      
@@ -149,62 +190,27 @@
 }
 
 .slidermain {
-  &__item {     
-    background-color: $accent;
+  &__item {    
     position: relative;    
-    padding: 215px 0 280px 300px;    
+    padding: 215px 0 280px;    
     
     @include for-big-desktop-only  {     
-      padding: 190px 0 170px 150px;     
+      padding: 190px 0 170px;     
     }
     
     @include for-desktop-only {
-      padding: 70px 0 90px 50px;      
+      padding: 70px 0 90px;      
     }
     
     @include for-tablet-landscape-only {
-      padding: 90px 0 110px 20px;      
+      padding: 90px 0 110px;      
     } 
     
     @include for-phone-only {
       padding: 215px 25px 50px ;
     }
 
-    &::before {
-      content: '';
-      display: block;
-      max-width: 609px;
-      width: 100%;
-      min-height: 634px;
-      background-image: url('../images/banner/cirсle.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 98px;
-      right: 185px;
-      
-      @include for-big-desktop-only  {
-        max-width: 450px;        
-        min-height: 470px;
-        top: 16%;
-        right: 5%;
-      }
-
-      @include for-desktop-only {
-        max-width: 289px;        
-        min-height: 300px;        
-      }
-
-      @include for-tablet-landscape-only {
-        max-width: 225px;        
-        min-height: 235px;
-      }
-
-      @include for-phone-only {
-        top: 5px;       
-      }
-    }
+    
   } 
   
   &__link {
@@ -289,7 +295,8 @@
     top: 50%;
     left: 50%;
     max-width: 640px;
-    height: auto;
+    width: 100%;    
+    
     transform: translate(-8%, -50%);
     
     @include for-big-desktop-only  {
@@ -314,6 +321,11 @@
       transform: translateX(-50%);
       right: 0;
     }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;    
   }
 
   &__title {
